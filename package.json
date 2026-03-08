@@ -15,9 +15,8 @@
     "vue-router": "latest"
   },
   "devDependencies": {
-    "@nuxt/content": "latest",
+    "@nuxt/content": "^3.11.2",
     "@nuxt/image": "latest",
-    "@nuxthq/studio": "latest",
     "@nuxtjs/tailwindcss": "latest",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/forms": "^0.5.11",

@@ -2,6 +2,11 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const { data: statusData } = await useAsyncData('status', () => queryCollection('status').first())
+const { data: heroData } = await useAsyncData('hero', () => queryCollection('hero').first())
+const { data: aboutData } = await useAsyncData('about', () => queryCollection('about').first())
+const { data: galleryData } = await useAsyncData('gallery', () => queryCollection('gallery').first())
+const { data: contactData } = await useAsyncData('contact', () => queryCollection('contact').first())
+const { data: footerData } = await useAsyncData('footer', () => queryCollection('footer').first())
 
 const form = ref({
   name: '',
@@ -127,10 +132,8 @@ useHead({
             </div>
 
             <!-- Content -->
-            <div class="flex flex-col gap-3 text-center z-10 relative mt-auto md:mt-0 md:order-1 md:text-left md:items-start md:justify-center"><h1 class="text-white md:text-slate-900 md:dark:text-white text-4xl font-black leading-tight tracking-tight @[480px]:text-6xl drop-shadow-md md:drop-shadow-none md:text-5xl lg:text-6xl">
-                <div><span class="text-[50px] md:text-[60px] tracking-[-1.5px] md:tracking-tight">Mięciutkie szydełkowani</span></div>
-              </h1>
-              <p class="text-primary md:text-leather/80 text-lg font-semibold @[480px]:text-2xl drop-shadow-sm md:drop-shadow-none">~by @Becia</p>
+            <div class="flex flex-col gap-3 text-center z-10 relative mt-auto md:mt-0 md:order-1 md:text-left md:items-start md:justify-center prose-h1:text-white md:prose-h1:text-slate-900 md:dark:prose-h1:text-white prose-h1:text-4xl prose-h1:font-black prose-h1:leading-tight prose-h1:tracking-tight @[480px]:prose-h1:text-6xl prose-h1:drop-shadow-md md:prose-h1:drop-shadow-none md:prose-h1:text-5xl lg:prose-h1:text-6xl prose-p:text-primary md:prose-p:text-leather/80 prose-p:text-lg prose-p:font-semibold @[480px]:prose-p:text-2xl prose-p:drop-shadow-sm md:prose-p:drop-shadow-none prose-h1:m-0 prose-p:m-0">
+                <ContentRenderer v-if="heroData" :value="heroData" />
             </div>
 
           </div>
@@ -139,11 +142,8 @@ useHead({
 
 
       <!-- Hero Descriptions -->
-      <section class="p-6 md:max-w-7xl md:mx-auto md:w-full flex flex-col items-center text-center">
-        <span class="text-leather text-xs md:text-sm font-bold tracking-widest uppercase mb-2">PASJA DO RĘKODZIEŁA</span>
-        <p class="text-slate-600 dark:text-slate-300 text-base md:text-lg max-w-2xl mx-auto mb-6">
-          Odkryj świat ręcznie robionych, przytulnych maskotek. Każdy splot to kawałek serca włożony w to, by wywołać uśmiech na Twojej twarzy.
-        </p>
+      <section class="p-6 md:max-w-7xl md:mx-auto md:w-full flex flex-col items-center text-center prose-h1:text-leather prose-h1:text-xs md:prose-h1:text-sm prose-h1:font-bold prose-h1:tracking-widest prose-h1:uppercase prose-h1:mb-2 prose-h1:mt-0 prose-p:text-slate-600 dark:prose-p:text-slate-300 prose-p:text-base md:prose-p:text-lg prose-p:max-w-2xl prose-p:mx-auto prose-p:mb-6 prose-p:mt-0">
+        <ContentRenderer v-if="aboutData" :value="aboutData" />
 
               <a href="#gallery" class="leather-patch flex min-w-[160px] w-max mx-auto cursor-pointer items-center justify-center rounded-lg h-12 px-8 text-white text-base font-bold shadow-lg transform active:scale-95 transition-transform mb-4">
           <span class="truncate">Zobacz moje prace</span>
@@ -183,57 +183,25 @@ useHead({
       <!-- Gallery -->
       <section id="gallery" class="py-6 md:max-w-7xl md:mx-auto md:w-full md:py-12">
         <div class="flex items-center justify-between px-4 pb-4 md:mb-6">
-          <h2 class="text-leather dark:text-primary text-2xl md:text-3xl font-bold tracking-tight flex items-center gap-2">
+          <div class="flex items-center gap-2 text-leather dark:text-primary text-2xl md:text-3xl font-bold tracking-tight prose-h1:m-0 prose-h1:text-inherit prose-h1:font-inherit prose-p:m-0">
             <span class="material-symbols-outlined">auto_awesome</span>
-            Moje Szydełkowe Dzieła
-          </h2>
+            <ContentRenderer v-if="galleryData" :value="galleryData" />
+          </div>
         </div>
         <div class="flex overflow-x-auto pb-6 px-4 gap-4 snap-x no-scrollbar md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:snap-none md:pb-0">
-          <div class="flex-none w-64 snap-center md:w-auto md:flex-1">
+          <div v-for="(image, index) in galleryData?.images" :key="index" class="flex-none w-64 snap-center md:w-auto md:flex-1">
             <div class="rounded-xl overflow-hidden border-4 border-white dark:border-slate-700 shadow-md transition-transform hover:scale-105 duration-300">
               <div class="w-full aspect-[4/5] relative">
                 <NuxtImg
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPdBTPrpSuC4MN9MkFrNSycXfBoLsvSiuKzSdRETvfdPWjvnMJS3UsxxqSjfxUT0M9cava4dLpniV0axZcQgwXKrW0_sonraHWigSM_V4_-yY9ceqvdhf7VNzv2eQOhsBYHLPdgJg-KoFA0ndhyYnBoGwKq3hDpQh4lPk3JXR5NvZhapEeOeenMhjfjWxyX91q6fRpzlv_RxSYTopT6kKUOIggsocw-Xh1bGXAHKQUE_tZsmNpRB85EA0jQS08YrPBEje1P176EAY"
-                  alt="Handmade crochet light brown teddy bear"
+                  :src="image.src"
+                  :alt="image.alt"
                   class="absolute inset-0 w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
               <div class="p-3 bg-white dark:bg-slate-800">
-                <p class="text-leather dark:text-primary font-bold">Miś Przytulanka</p>
-                <p class="text-slate-500 dark:text-slate-400 text-xs">Ręcznie robione z miłością</p>
-              </div>
-            </div>
-          </div>
-          <div class="flex-none w-64 snap-center md:w-auto md:flex-1">
-            <div class="rounded-xl overflow-hidden border-4 border-white dark:border-slate-700 shadow-md transition-transform hover:scale-105 duration-300">
-              <div class="w-full aspect-[4/5] relative">
-                <NuxtImg
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAukU2TYy4zk8569P5g4B_0aVO8ZrokQtVCs06WLcGAUOtlx0HGHVkPYYrgzuhkikouJVjonGfF0Mpw9jB51m6u_CrlIAND_mgXp-NcLi_yeEfVYF2i5C40pqQXtncLZHfkBbyTlAlIl8UJUoDmm95c-bF78j5Sl5oTL1uCFMZC0OaVrSsozXes9kPVw7wFkJFmhygu4QlqK_dojmlZhic9GQ6tEZCMoAyO4OVcDFWEV93k-G7lxS7u6P55Nk6xHS_oI6RjSu1ILUM"
-                  alt="Colorful crochet flowers in a small pot"
-                  class="absolute inset-0 w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div class="p-3 bg-white dark:bg-slate-800">
-                <p class="text-leather dark:text-primary font-bold">Szydełkowe Kwiaty</p>
-                <p class="text-slate-500 dark:text-slate-400 text-xs">Prezent, który nie więdnie</p>
-              </div>
-            </div>
-          </div>
-          <div class="flex-none w-64 snap-center md:w-auto md:flex-1">
-            <div class="rounded-xl overflow-hidden border-4 border-white dark:border-slate-700 shadow-md transition-transform hover:scale-105 duration-300">
-              <div class="w-full aspect-[4/5] relative">
-                <NuxtImg
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcX-sExvAK0n1oTo4qhpOSdSeqyQqWaUIxCjufNXG31G7pMOVduJ1U-unbF71oFZnGxlRNKp21zmpRxVzqXv-g7YyJKCWdpReAVEcFj6LPRDwxFeXQ_zYPsgTP-k3DQ4cI8dLL6FZ_Xdv0jJcczrSnEPJ-lD9Bfi9ojJngX_63l6m4R8N1wJ0hAnEkX6bc_uj8RW-mFfhDxGnXyzXKyvE1uNgM3zqtgFrBPu5-nvmIC-ZwVGkiED0WPRi2NIlvpReggs_MMvIpx2U"
-                  alt="Cute amigurumi doll with pink dress"
-                  class="absolute inset-0 w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div class="p-3 bg-white dark:bg-slate-800">
-                <p class="text-leather dark:text-primary font-bold">Lalka Amigurumi</p>
-                <p class="text-slate-500 dark:text-slate-400 text-xs">Dla Twojej pociechy</p>
+                <p class="text-leather dark:text-primary font-bold">{{ image.title }}</p>
+                <p class="text-slate-500 dark:text-slate-400 text-xs">{{ image.description }}</p>
               </div>
             </div>
           </div>
@@ -247,8 +215,9 @@ useHead({
             <div class="inline-block p-3 bg-white dark:bg-slate-800 rounded-full mb-4 shadow-sm">
               <span class="material-symbols-outlined text-leather text-4xl">edit_note</span>
             </div>
-            <h2 class="text-leather dark:text-primary text-2xl font-black mb-2">Lista oczekujących</h2>
-            <p class="text-stitch-brown dark:text-slate-300">Zostaw wiadomość, aby zarezerwować termin na swoje wymarzone dzieło.</p>
+            <div class="prose-h1:text-leather dark:prose-h1:text-primary prose-h1:text-2xl prose-h1:font-black prose-h1:mb-2 prose-h1:mt-0 prose-p:text-stitch-brown dark:prose-p:text-slate-300 prose-p:m-0">
+               <ContentRenderer v-if="contactData" :value="contactData" />
+            </div>
           </div>
 
           <form @submit.prevent="submitForm" class="space-y-4 bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg border-2 border-leather/10 relative">
@@ -292,11 +261,8 @@ useHead({
         <a href="#" class="text-leather dark:text-primary"><span class="material-symbols-outlined text-3xl">chat_bubble</span></a>
         <a href="#" class="text-leather dark:text-primary"><span class="material-symbols-outlined text-3xl">mail</span></a>
       </div>
-      <p class="text-slate-500 text-sm">© 2024 Mięciutkie szydełkowanie ~by @Becia</p>
-      <div class="mt-4 flex justify-center items-center gap-1 text-slate-400 text-xs">
-        <span>Wykonano z</span>
-        <span class="material-symbols-outlined text-red-400 text-sm">favorite</span>
-        <span>przez Becię</span>
+      <div class="prose-p:text-slate-500 prose-p:text-sm prose-p:mb-2 prose-p:mt-0 prose-p:last-of-type:text-slate-400 prose-p:last-of-type:text-xs prose-p:last-of-type:flex prose-p:last-of-type:justify-center prose-p:last-of-type:items-center prose-p:last-of-type:gap-1">
+        <ContentRenderer v-if="footerData" :value="footerData" />
       </div>
     </footer>
 
