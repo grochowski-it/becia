@@ -12,8 +12,10 @@ export default defineNuxtConfig({
   ],
   studio: {
     repository: {
+      provider: 'github',
       owner: 'mrGrochowski',
-      name: 'becia'
+      repo: 'becia',
+      branch: 'main'
     }
   },
   css: [
