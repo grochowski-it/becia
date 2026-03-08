@@ -10,6 +10,12 @@ export default defineNuxtConfig({
     '@nuxthq/studio',
     '@nuxt/image'
   ],
+  studio: {
+    repository: {
+      owner: 'mrGrochowski',
+      name: 'becia'
+    }
+  },
   css: [
     '~/assets/css/main.css'
   ],
