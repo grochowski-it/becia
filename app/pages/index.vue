@@ -113,10 +113,10 @@ useHead({
       <!-- Hero -->
       <section id="hero" class="@container md:max-w-7xl md:mx-auto">
         <div class="@[480px]:p-4">
-          <div class="flex min-h-[420px] flex-col justify-end gap-6 bg-cover bg-center bg-no-repeat @[480px]:rounded-xl p-6 relative overflow-hidden group md:grid md:grid-cols-2 md:items-center md:gap-12 md:bg-transparent md:min-h-0 md:justify-center">
+          <div class="flex min-h-[500px] flex-col justify-end gap-6 bg-cover bg-center bg-no-repeat @[480px]:rounded-xl p-6 relative overflow-hidden group md:grid md:grid-cols-2 md:items-center md:gap-12 md:bg-transparent md:min-h-0 md:justify-center">
 
             <!-- Background Image for mobile/tablet, Column Image for Desktop -->
-            <div class="absolute inset-0 md:relative md:order-2 md:h-[500px] md:rounded-2xl md:overflow-hidden md:shadow-xl">
+            <div class="absolute inset-0 md:relative md:order-2 md:h-[600px] md:rounded-2xl md:overflow-hidden md:shadow-xl">
               <NuxtImg
                 src="https://i.postimg.cc/MHxft4y4/becia.jpg"
                 class="w-full h-full object-cover md:absolute md:inset-0"
