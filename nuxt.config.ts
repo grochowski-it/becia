@@ -34,6 +34,22 @@ export default defineNuxtConfig({
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap'
+        },
+        {
+          rel: 'icon',
+          type: 'image/png',
+          sizes: '192x192',
+          href: '/icon-192x192.png'
+        },
+        {
+          rel: 'icon',
+          type: 'image/png',
+          sizes: '512x512',
+          href: '/icon-512x512.png'
+        },
+        {
+          rel: 'apple-touch-icon',
+          href: '/icon-192x192.png'
         }
       ]
     }
