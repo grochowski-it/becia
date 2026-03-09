@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxt/content',
     '@nuxt/image',
+    'nuxt-studio',
     '@nuxt/icon'
   ],
   icon: {
@@ -30,7 +31,12 @@ export default defineNuxtConfig({
   },
   studio: {
     enabled: true,
-    repository: 'mrGrochowski/becia'
+    repository: {
+      provider: 'github',
+      owner: 'mrGrochowski',
+      repo: 'becia',
+      branch: 'main'
+    }
   },
   css: [
     '~/assets/css/main.css'
