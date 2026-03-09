@@ -132,7 +132,7 @@ useHead({
             </div>
 
             <!-- Content -->
-            <div class="flex flex-col gap-3 text-center z-10 relative mt-auto md:mt-0 md:order-1 md:text-left md:items-start md:justify-center prose-h1:text-white md:prose-h1:text-slate-900 md:dark:prose-h1:text-white prose-h1:text-4xl prose-h1:font-black prose-h1:leading-tight prose-h1:tracking-tight @[480px]:prose-h1:text-6xl prose-h1:drop-shadow-md md:prose-h1:drop-shadow-none md:prose-h1:text-5xl lg:prose-h1:text-6xl prose-p:text-primary md:prose-p:text-leather/80 prose-p:text-lg prose-p:font-semibold @[480px]:prose-p:text-2xl prose-p:drop-shadow-sm md:prose-p:drop-shadow-none prose-h1:m-0 prose-p:m-0">
+            <div class="flex flex-col gap-3 text-center z-10 relative mt-auto md:mt-0 md:order-1 md:text-left md:items-start md:justify-center [&_h1]:text-white md:[&_h1]:text-slate-900 md:dark:[&_h1]:text-white [&_h1]:text-4xl [&_h1]:font-black [&_h1]:leading-tight [&_h1]:tracking-tight @[480px]:[&_h1]:text-6xl [&_h1]:drop-shadow-md md:[&_h1]:drop-shadow-none md:[&_h1]:text-5xl lg:[&_h1]:text-6xl [&_p]:text-primary md:[&_p]:text-leather/80 [&_p]:text-lg [&_p]:font-semibold @[480px]:[&_p]:text-2xl [&_p]:drop-shadow-sm md:[&_p]:drop-shadow-none [&_h1]:m-0 [&_p]:m-0">
                 <ContentRenderer v-if="heroData" :value="heroData" />
             </div>
 
@@ -142,7 +142,7 @@ useHead({
 
 
       <!-- Hero Descriptions -->
-      <section class="p-6 md:max-w-7xl md:mx-auto md:w-full flex flex-col items-center text-center prose-h1:text-leather prose-h1:text-xs md:prose-h1:text-sm prose-h1:font-bold prose-h1:tracking-widest prose-h1:uppercase prose-h1:mb-2 prose-h1:mt-0 prose-p:text-slate-600 dark:prose-p:text-slate-300 prose-p:text-base md:prose-p:text-lg prose-p:max-w-2xl prose-p:mx-auto prose-p:mb-6 prose-p:mt-0">
+      <section class="p-6 md:max-w-7xl md:mx-auto md:w-full flex flex-col items-center text-center [&_h1]:text-leather [&_h1]:text-xs md:[&_h1]:text-sm [&_h1]:font-bold [&_h1]:tracking-widest [&_h1]:uppercase [&_h1]:mb-2 [&_h1]:mt-0 [&_p]:text-slate-600 dark:[&_p]:text-slate-300 [&_p]:text-base md:[&_p]:text-lg [&_p]:max-w-2xl [&_p]:mx-auto [&_p]:mb-6 [&_p]:mt-0">
         <ContentRenderer v-if="aboutData" :value="aboutData" />
 
               <a href="#gallery" class="leather-patch flex min-w-[160px] w-max mx-auto cursor-pointer items-center justify-center rounded-lg h-12 px-8 text-white text-base font-bold shadow-lg transform active:scale-95 transition-transform mb-4">
@@ -183,7 +183,7 @@ useHead({
       <!-- Gallery -->
       <section id="gallery" class="py-6 md:max-w-7xl md:mx-auto md:w-full md:py-12">
         <div class="flex items-center justify-between px-4 pb-4 md:mb-6">
-          <div class="flex items-center gap-2 text-leather dark:text-primary text-2xl md:text-3xl font-bold tracking-tight prose-h1:m-0 prose-h1:text-inherit prose-h1:font-inherit prose-p:m-0">
+          <div class="flex items-center gap-2 text-leather dark:text-primary text-2xl md:text-3xl font-bold tracking-tight [&_h1]:m-0 [&_h1]:text-inherit [&_h1]:font-inherit [&_p]:m-0">
             <span class="material-symbols-outlined">auto_awesome</span>
             <ContentRenderer v-if="galleryData" :value="galleryData" />
           </div>
@@ -215,7 +215,7 @@ useHead({
             <div class="inline-block p-3 bg-white dark:bg-slate-800 rounded-full mb-4 shadow-sm">
               <span class="material-symbols-outlined text-leather text-4xl">edit_note</span>
             </div>
-            <div class="prose-h1:text-leather dark:prose-h1:text-primary prose-h1:text-2xl prose-h1:font-black prose-h1:mb-2 prose-h1:mt-0 prose-p:text-stitch-brown dark:prose-p:text-slate-300 prose-p:m-0">
+            <div class="[&_h1]:text-leather dark:[&_h1]:text-primary [&_h1]:text-2xl [&_h1]:font-black [&_h1]:mb-2 [&_h1]:mt-0 [&_p]:text-stitch-brown dark:[&_p]:text-slate-300 [&_p]:m-0">
                <ContentRenderer v-if="contactData" :value="contactData" />
             </div>
           </div>
@@ -261,7 +261,7 @@ useHead({
         <a href="#" class="text-leather dark:text-primary"><span class="material-symbols-outlined text-3xl">chat_bubble</span></a>
         <a href="#" class="text-leather dark:text-primary"><span class="material-symbols-outlined text-3xl">mail</span></a>
       </div>
-      <div class="prose-p:text-slate-500 prose-p:text-sm prose-p:mb-2 prose-p:mt-0 prose-p:last-of-type:text-slate-400 prose-p:last-of-type:text-xs prose-p:last-of-type:flex prose-p:last-of-type:justify-center prose-p:last-of-type:items-center prose-p:last-of-type:gap-1">
+      <div class="[&_p]:text-slate-500 [&_p]:text-sm [&_p]:mb-2 [&_p]:mt-0 [&_p]:last-of-type:text-slate-400 [&_p]:last-of-type:text-xs [&_p]:last-of-type:flex [&_p]:last-of-type:justify-center [&_p]:last-of-type:items-center [&_p]:last-of-type:gap-1">
         <ContentRenderer v-if="footerData" :value="footerData" />
       </div>
     </footer>
