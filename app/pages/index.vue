@@ -145,7 +145,7 @@ useHead({
       <section class="p-6 md:max-w-7xl md:mx-auto md:w-full flex flex-col items-center text-center [&_h1]:text-leather [&_h1]:text-xs md:[&_h1]:text-sm [&_h1]:font-bold [&_h1]:tracking-widest [&_h1]:uppercase [&_h1]:mb-2 [&_h1]:mt-0 [&_p]:text-slate-600 dark:[&_p]:text-slate-300 [&_p]:text-base md:[&_p]:text-lg [&_p]:max-w-2xl [&_p]:mx-auto [&_p]:mb-6 [&_p]:mt-0">
         <ContentRenderer v-if="aboutData" :value="aboutData" />
 
-              <a href="#gallery" class="leather-patch flex min-w-[160px] w-max mx-auto cursor-pointer items-center justify-center rounded-lg h-12 px-8 text-white text-base font-bold shadow-lg transform active:scale-95 transition-transform mb-4">
+        <a href="#gallery" class="leather-patch flex min-w-[160px] w-max mx-auto cursor-pointer items-center justify-center rounded-lg h-12 px-8 text-white text-base font-bold shadow-lg transform active:scale-95 transition-transform mb-4">
           <span class="truncate">Zobacz moje prace</span>
         </a>
       </section>
