@@ -131,6 +131,18 @@ useHead({
                 <div><span class="text-[50px] md:text-[60px] tracking-[-1.5px] md:tracking-tight">Mięciutkie szydełkowani</span></div>
               </h1>
               <p class="text-primary md:text-leather/80 text-lg font-semibold @[480px]:text-2xl drop-shadow-sm md:drop-shadow-none">~by @Becia</p>
+
+              <!-- Desktop Hero Descriptions -->
+              <div class="hidden md:flex flex-col items-start text-left mt-6">
+                <span class="text-leather text-xs md:text-sm font-bold tracking-widest uppercase mb-2">PASJA DO RĘKODZIEŁA</span>
+                <p class="text-slate-600 dark:text-slate-300 text-base md:text-lg max-w-2xl mb-6">
+                  Odkryj świat ręcznie robionych, przytulnych maskotek. Każdy splot to kawałek serca włożony w to, by wywołać uśmiech na Twojej twarzy.
+                </p>
+
+                <a href="#gallery" class="leather-patch flex min-w-[160px] w-max cursor-pointer items-center justify-center rounded-lg h-12 px-8 text-white text-base font-bold shadow-lg transform active:scale-95 transition-transform mb-4">
+                  <span class="truncate">Zobacz moje prace</span>
+                </a>
+              </div>
             </div>
 
           </div>
@@ -138,14 +150,14 @@ useHead({
       </section>
 
 
-      <!-- Hero Descriptions -->
-      <section class="p-6 md:max-w-7xl md:mx-auto md:w-full flex flex-col items-center text-center">
-        <span class="text-leather text-xs md:text-sm font-bold tracking-widest uppercase mb-2">PASJA DO RĘKODZIEŁA</span>
-        <p class="text-slate-600 dark:text-slate-300 text-base md:text-lg max-w-2xl mx-auto mb-6">
+      <!-- Mobile Hero Descriptions -->
+      <section class="p-6 flex flex-col items-center text-center md:hidden">
+        <span class="text-leather text-xs font-bold tracking-widest uppercase mb-2">PASJA DO RĘKODZIEŁA</span>
+        <p class="text-slate-600 dark:text-slate-300 text-base max-w-2xl mx-auto mb-6">
           Odkryj świat ręcznie robionych, przytulnych maskotek. Każdy splot to kawałek serca włożony w to, by wywołać uśmiech na Twojej twarzy.
         </p>
 
-              <a href="#gallery" class="leather-patch flex min-w-[160px] w-max mx-auto cursor-pointer items-center justify-center rounded-lg h-12 px-8 text-white text-base font-bold shadow-lg transform active:scale-95 transition-transform mb-4">
+        <a href="#gallery" class="leather-patch flex min-w-[160px] w-max mx-auto cursor-pointer items-center justify-center rounded-lg h-12 px-8 text-white text-base font-bold shadow-lg transform active:scale-95 transition-transform mb-4">
           <span class="truncate">Zobacz moje prace</span>
         </a>
       </section>
