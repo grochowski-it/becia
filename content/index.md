@@ -25,6 +25,8 @@ title: PASJA DO RĘKODZIEŁA
 ---
 isOnline: "true"
 link: Skontaktuj się
+online: Becia teraz pracuje (Online)
+onlinetext: Aktualnie przyjmuję nowe zamówienia na wymarzone maskotki.
 offline: Becia teraz odpoczywa (Offline)
 offlinetext: Wracam niebawem z nową energią do szydełkowania.
 ---
