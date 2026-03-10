@@ -82,7 +82,7 @@ useHead({
     </header>
 
     <main>
-      <ContentRenderer v-if="page" :value="page" />
+      <ContentRenderer v-if="page" :value="page" class="flex flex-col gap-0 md:gap-0" />
     </main>
 
     <Footer
