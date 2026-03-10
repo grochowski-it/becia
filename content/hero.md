@@ -1,2 +1,0 @@
-# Mięciutkie szydełkowani
-~by @Becia
