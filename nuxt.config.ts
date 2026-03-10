@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     enabled: true,
     repository: {
       provider: 'github',
-      owner: 'mrGrochowski',
+      owner: 'grochowski_it',
       repo: 'becia',
       branch: 'main'
     }
