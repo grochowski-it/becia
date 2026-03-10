@@ -1,14 +1,14 @@
 <script setup lang="ts">
 const props = defineProps<{
   isOnline: string | boolean
-  online: string
-  onlinetext: string
-  offline: string
-  offlinetext: string
+  textOnline: string
+  textOnlineDesc: string
+  textOffline: string
+  textOfflineDesc: string
   link: string
 }>()
 
-const online = computed(() => props.isOnline === 'true' || props.isOnline === true)
+const isUserOnline = computed(() => props.isOnline === 'true' || props.isOnline === true)
 </script>
 
 <template>
@@ -18,19 +18,19 @@ const online = computed(() => props.isOnline === 'true' || props.isOnline === tr
         <div class="relative">
           <div
             class="size-4 rounded-full"
-            :class="[online ? 'bg-green-500 animate-pulse' : 'bg-gray-400']"
+            :class="[isUserOnline ? 'bg-green-500 animate-pulse' : 'bg-gray-400']"
           ></div>
           <div
-            v-if="online"
+            v-if="isUserOnline"
             class="absolute inset-0 size-4 bg-green-500 rounded-full opacity-50 blur-sm"
           ></div>
         </div>
         <div class="flex flex-col gap-1">
           <p class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight">
-            {{ online ? props.online : offline }}
+            {{ isUserOnline ? textOnline : textOffline }}
           </p>
           <p class="text-stitch-brown dark:text-primary/80 text-sm font-normal">
-            {{ online ? onlinetext : offlinetext }}
+            {{ isUserOnline ? textOnlineDesc : textOfflineDesc }}
           </p>
         </div>
       </div>
