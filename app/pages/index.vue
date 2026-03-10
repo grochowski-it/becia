@@ -91,13 +91,7 @@ useHead({
     <header class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-center sticky top-0 z-50 border-b border-primary/20">
       <div class="flex items-center justify-between w-full max-w-7xl">
         <div class="flex size-12 shrink-0 items-center justify-center">
-          <NuxtImg
-            src="/logo.png"
-            alt="Logo"
-            class="w-full h-full object-contain"
-            width="48"
-            height="48"
-          />
+          <Icon name="custom:logo" class="w-12 h-12 text-leather" />
         </div>
 
         <h2 class="text-leather dark:text-primary text-lg font-bold leading-tight tracking-tight flex-1 text-center">Mięciutkie szydełkowanie</h2>

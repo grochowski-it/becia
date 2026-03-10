@@ -8,7 +8,8 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxt/content',
     '@nuxt/image',
-    'nuxt-studio'
+    'nuxt-studio',
+    '@nuxt/icon'
   ],
   studio: {
     enabled: true,
@@ -18,6 +19,14 @@ export default defineNuxtConfig({
       repo: 'becia',
       branch: 'main'
     }
+  },
+  icon: {
+    customCollections: [
+      {
+        prefix: 'custom',
+        dir: './app/assets/icons'
+      }
+    ]
   },
   css: [
     '~/assets/css/main.css'
