@@ -12,9 +12,9 @@ defineProps<{
 <template>
   <section id="hero" class="p-4 @container md:max-w-7xl md:mx-auto md:w-full">
     <div class="@[480px]:p-4 md:w-full">
-      <div class="flex min-h-[500px] flex-col justify-end gap-6 bg-cover bg-center bg-no-repeat @[480px]:rounded-xl p-6 relative overflow-hidden group md:grid md:grid-cols-2 md:items-center md:gap-12 md:bg-transparent md:min-h-0 md:justify-center md:p-0 md:w-full">
+      <div class="flex min-h-[500px] flex-col justify-end gap-6 bg-cover bg-center bg-no-repeat rounded-xl p-6 relative overflow-hidden group md:grid md:grid-cols-2 md:items-center md:gap-12 md:bg-transparent md:min-h-0 md:justify-center md:p-0 md:w-full">
         <!-- Background Image for mobile/tablet, Column Image for Desktop -->
-        <div class="absolute inset-0 md:relative md:order-2 md:h-[600px] md:rounded-2xl md:overflow-hidden md:shadow-xl md:w-full">
+        <div class="absolute inset-0 md:relative md:order-2 md:h-[600px] md:rounded-xl md:overflow-hidden md:shadow-xl md:w-full">
           <NuxtImg
             :src="image"
             class="w-full h-full object-cover md:absolute md:inset-0"
