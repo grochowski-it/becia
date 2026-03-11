@@ -85,8 +85,8 @@ useSchemaOrg(schemas)
   <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
     <header class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-center sticky top-0 z-50 border-b border-primary/20">
       <div class="flex items-center justify-between w-full max-w-7xl">
-        <div class="flex size-20 shrink-0 items-center justify-center">
-          <Icon name="custom:logo" class="w-20 h-20 text-leather" />
+        <div class="flex size-32 shrink-0 items-center justify-center">
+          <Icon name="custom:logo" class="w-32 h-32 text-leather" />
         </div>
 
         <h2 class="text-leather dark:text-primary text-lg font-bold leading-tight tracking-tight flex-1 text-center">Mięciutkie szydełkowanie</h2>
