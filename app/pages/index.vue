@@ -2,6 +2,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const { data: page } = await useAsyncData('page', () => queryCollection('page').first())
+const { data: galleryData } = await useAsyncData('gallery_items_schema', () => queryCollection('gallery').first())
 
 const showBottomNav = ref(false)
 
@@ -36,16 +37,19 @@ if (page.value) {
   })
 }
 
+const config = useRuntimeConfig()
+
 // Global SEO Head (dla np. geo meta tagów)
 useHead({
   meta: [
     { name: 'geo.region', content: 'PL-10' },
-    { name: 'geo.placename', content: 'Zgierz, Łódź' }
+    { name: 'geo.placename', content: 'Zgierz, Łódź' },
+    ...(config.public.googleSiteVerification ? [{ name: 'google-site-verification', content: config.public.googleSiteVerification as string }] : [])
   ]
 })
 
 // Dane strukturalne w standardzie Nuxt SEO (Schema.org)
-useSchemaOrg([
+const schemas = [
   defineWebSite({
     name: 'Mięciutkie szydełkowanie by Becia'
   }),
@@ -60,15 +64,29 @@ useSchemaOrg([
     },
     image: 'https://i.postimg.cc/MHxft4y4/becia.jpg'
   })
-])
+]
+
+if (galleryData.value?.images && galleryData.value.images.length > 0) {
+  galleryData.value.images.forEach((img: any) => {
+    schemas.push(
+      defineProduct({
+        name: img.title,
+        description: img.description,
+        image: img.src
+      })
+    )
+  })
+}
+
+useSchemaOrg(schemas)
 </script>
 
 <template>
   <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
     <header class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-center sticky top-0 z-50 border-b border-primary/20">
       <div class="flex items-center justify-between w-full max-w-7xl">
-        <div class="flex size-20 shrink-0 items-center justify-center">
-          <Icon name="custom:logo" class="w-20 h-20 text-leather" />
+        <div class="flex size-32 shrink-0 items-center justify-center">
+          <Icon name="custom:logo" class="w-32 h-32 text-leather" />
         </div>
 
         <h2 class="text-leather dark:text-primary text-lg font-bold leading-tight tracking-tight flex-1 text-center">Mięciutkie szydełkowanie</h2>

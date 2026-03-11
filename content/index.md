@@ -17,7 +17,7 @@ title: Mięciutkie szydełkowanie
 
 ::about
 ---
-:link-text: "'Zobacz moje prace'"
+:link-text: Zobacz moje prace
 text: Odkryj świat ręcznie robionych, przytulnych maskotek. Każdy splot to
   kawałek serca włożony w to, by wywołać uśmiech na Twojej twarzy.
 title: PASJA DO RĘKODZIEŁA
@@ -39,7 +39,7 @@ textOnlineDesc: Aktualnie przyjmuję nowe zamówienia na wymarzone maskotki.
 
 ::contact
 ---
-:button-text: "'ZAPISZ MNIE NA LISTĘ'"
+:button-text: ZAPISZ MNIE NA LISTĘ
 :email-label: "'E-mail'"
 :email-placeholder: "'twoj@email.pl'"
 :info-text: "'* Skontaktuję się z Tobą w ciągu 48h, aby omówić szczegóły i czas

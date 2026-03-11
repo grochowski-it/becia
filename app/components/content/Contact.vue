@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { $fetch } from 'ofetch'
+import { useOrderStore } from '~/stores/order'
 
 defineProps<{
   title: string
@@ -26,6 +27,20 @@ const pending = ref(false)
 const successMsg = ref('')
 const errorMsg = ref('')
 
+const orderStore = useOrderStore()
+
+onMounted(() => {
+  if (orderStore.orderMessage) {
+    form.value.message = orderStore.orderMessage
+  }
+})
+
+watch(() => orderStore.orderMessage, (newVal) => {
+  if (newVal) {
+    form.value.message = newVal
+  }
+})
+
 const submitForm = async () => {
   pending.value = true
   successMsg.value = ''
@@ -41,6 +56,7 @@ const submitForm = async () => {
     form.value.name = ''
     form.value.email = ''
     form.value.message = ''
+    orderStore.clearOrderMessage()
   } catch (error: any) {
     errorMsg.value = error.data?.statusMessage || 'Wystąpił błąd. Spróbuj ponownie później.'
   } finally {

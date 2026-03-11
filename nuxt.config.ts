@@ -10,7 +10,8 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-studio',
     '@nuxt/icon',
-    '@nuxtjs/seo'
+    '@nuxtjs/seo',
+    '@pinia/nuxt'
   ],
   site: {
     url: 'https://becia.pl',
@@ -84,6 +85,9 @@ export default defineNuxtConfig({
       smtpPass: process.env.SMTP_PASS || '',
       smtpFrom: process.env.SMTP_FROM || '',
       smtpTo: process.env.SMTP_TO || ''
+    },
+    public: {
+      googleSiteVerification: process.env.GOOGLE_SITE_VERIFICATION || ''
     }
   },
   routeRules: {
