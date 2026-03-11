@@ -19,9 +19,14 @@ const images = computed(() => galleryData.value?.images || [])
       </div>
     </div>
     <div class="flex overflow-x-auto pb-6 px-4 gap-4 snap-x no-scrollbar md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:snap-none md:pb-0">
-      <div v-for="(image, index) in images" :key="index" class="flex-none w-64 snap-center md:w-auto md:flex-1">
-        <div class="rounded-xl overflow-hidden border-4 border-white dark:border-slate-700 shadow-md transition-transform hover:scale-105 duration-300">
-          <div class="w-full aspect-[4/5] relative">
+      <NuxtLink
+        v-for="(image, index) in images"
+        :key="index"
+        :to="`/produkt/${useSlugify(image.title)}`"
+        class="flex-none w-64 snap-center md:w-auto md:flex-1 block cursor-pointer"
+      >
+        <div class="rounded-xl overflow-hidden border-4 border-white dark:border-slate-700 shadow-md transition-transform hover:scale-105 duration-300 h-full flex flex-col">
+          <div class="w-full aspect-[4/5] relative shrink-0">
             <NuxtImg
               :src="image.src"
               :alt="image.alt"
@@ -29,12 +34,12 @@ const images = computed(() => galleryData.value?.images || [])
               loading="lazy"
             />
           </div>
-          <div class="p-3 bg-white dark:bg-slate-800">
+          <div class="p-3 bg-white dark:bg-slate-800 flex-1">
             <p class="text-leather dark:text-primary font-bold">{{ image.title }}</p>
             <p class="text-slate-500 dark:text-slate-400 text-xs">{{ image.description }}</p>
           </div>
         </div>
-      </div>
+      </NuxtLink>
     </div>
   </section>
 </template>

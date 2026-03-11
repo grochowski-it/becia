@@ -10,7 +10,8 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-studio',
     '@nuxt/icon',
-    '@nuxtjs/seo'
+    '@nuxtjs/seo',
+    '@pinia/nuxt'
   ],
   site: {
     url: 'https://becia.pl',
