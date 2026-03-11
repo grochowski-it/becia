@@ -40,14 +40,13 @@ textOnlineDesc: Aktualnie przyjmuję nowe zamówienia na wymarzone maskotki.
 ::contact
 ---
 :button-text: ZAPISZ MNIE NA LISTĘ
-:email-label: "'E-mail'"
-:email-placeholder: "'twoj@email.pl'"
-:info-text: "'* Skontaktuję się z Tobą w ciągu 48h, aby omówić szczegóły i czas
-  realizacji.'"
-:message-label: "'Co chciałabyś/chciałbyś zamówić?'"
-:message-placeholder: "'Opisz swoją wymarzoną maskotkę, ubranie i inne...'"
-:name-label: "'Twoje Imię'"
-:name-placeholder: "'Ania Kowalska'"
+:email-label: E-mail
+:email-placeholder: twoj@email.pl
+:info-text: "' Skontaktuję się z Tobą w ciągu 48h, aby omówić szczegóły i czas realizacji."
+:message-label: Co chciałabyś/chciałbyś zamówić?
+:message-placeholder: Opisz swoją wymarzoną maskotkę, ubranie i inne...
+:name-label: Twoje Imię
+:name-placeholder: Ania Kowalska
 badge: HANDMADE
 icon: edit_note
 text: Zostaw wiadomość, aby zarezerwować termin na swoje wymarzone dzieło.
