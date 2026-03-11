@@ -79,6 +79,9 @@ export default defineNuxtConfig({
       smtpPass: process.env.SMTP_PASS || '',
       smtpFrom: process.env.SMTP_FROM || '',
       smtpTo: process.env.SMTP_TO || ''
+    },
+    public: {
+      googleSiteVerification: process.env.GOOGLE_SITE_VERIFICATION || ''
     }
   },
   routeRules: {

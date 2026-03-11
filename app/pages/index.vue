@@ -2,6 +2,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const { data: page } = await useAsyncData('page', () => queryCollection('page').first())
+const { data: galleryData } = await useAsyncData('gallery_items_schema', () => queryCollection('gallery').first())
 
 const showBottomNav = ref(false)
 
@@ -36,16 +37,19 @@ if (page.value) {
   })
 }
 
+const config = useRuntimeConfig()
+
 // Global SEO Head (dla np. geo meta tagów)
 useHead({
   meta: [
     { name: 'geo.region', content: 'PL-10' },
-    { name: 'geo.placename', content: 'Zgierz, Łódź' }
+    { name: 'geo.placename', content: 'Zgierz, Łódź' },
+    ...(config.public.googleSiteVerification ? [{ name: 'google-site-verification', content: config.public.googleSiteVerification as string }] : [])
   ]
 })
 
 // Dane strukturalne w standardzie Nuxt SEO (Schema.org)
-useSchemaOrg([
+const schemas = [
   defineWebSite({
     name: 'Mięciutkie szydełkowanie by Becia'
   }),
@@ -60,7 +64,21 @@ useSchemaOrg([
     },
     image: 'https://i.postimg.cc/MHxft4y4/becia.jpg'
   })
-])
+]
+
+if (galleryData.value?.images && galleryData.value.images.length > 0) {
+  galleryData.value.images.forEach((img: any) => {
+    schemas.push(
+      defineProduct({
+        name: img.title,
+        description: img.description,
+        image: img.src
+      })
+    )
+  })
+}
+
+useSchemaOrg(schemas)
 </script>
 
 <template>
