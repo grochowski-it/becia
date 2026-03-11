@@ -18,6 +18,11 @@ export default defineNuxtConfig({
     description: 'Mięciutkie szydełkowanie - ręcznie robione z miłością. Pluszaki, kwiaty i lalki amigurumi.',
     defaultLocale: 'pl',
   },
+  seo: {
+    meta: {
+      googleSiteVerification: process.env.GOOGLE_SITE_VERIFICATION,
+    }
+  },
   studio: {
     enabled: true,
     repository: {
