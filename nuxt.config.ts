@@ -9,8 +9,15 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxt/image',
     'nuxt-studio',
-    '@nuxt/icon'
+    '@nuxt/icon',
+    '@nuxtjs/seo'
   ],
+  site: {
+    url: 'https://becia.pl',
+    name: 'Mięciutkie szydełkowanie by Becia',
+    description: 'Mięciutkie szydełkowanie - ręcznie robione z miłością. Pluszaki, kwiaty i lalki amigurumi.',
+    defaultLocale: 'pl',
+  },
   studio: {
     enabled: true,
     repository: {
@@ -75,7 +82,9 @@ export default defineNuxtConfig({
     }
   },
   routeRules: {
-    '/': { prerender: true }
+    '/': { prerender: true },
+    '/sitemap.xml': { prerender: true },
+    '/robots.txt': { prerender: true }
   },
   nitro: {
     preset: 'vercel'

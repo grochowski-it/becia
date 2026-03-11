@@ -21,32 +21,46 @@ onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
 
-// SEO
+// SEO z Nuxt Content
+if (page.value) {
+  useSeoMeta({
+    title: page.value.title,
+    description: page.value.description,
+    ogTitle: page.value.title,
+    ogDescription: page.value.description,
+    ogImage: 'https://i.postimg.cc/MHxft4y4/becia.jpg',
+    twitterTitle: page.value.title,
+    twitterDescription: page.value.description,
+    twitterImage: 'https://i.postimg.cc/MHxft4y4/becia.jpg',
+    twitterCard: 'summary_large_image'
+  })
+}
+
+// Global SEO Head (dla np. geo meta tagów)
 useHead({
-  title: 'Mięciutkie szydełkowanie ~by @Becia',
   meta: [
-    { name: 'description', content: 'Mięciutkie szydełkowanie - ręcznie robione z miłością. Pluszaki, kwiaty i lalki amigurumi.' },
     { name: 'geo.region', content: 'PL-10' },
     { name: 'geo.placename', content: 'Zgierz, Łódź' }
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'LocalBusiness',
-        name: 'Mięciutkie szydełkowanie by Becia',
-        description: 'Ręcznie robione szydełkowe pluszaki i maskotki',
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Zgierz',
-          addressRegion: 'Łódzkie',
-          addressCountry: 'PL'
-        }
-      })
-    }
   ]
 })
+
+// Dane strukturalne w standardzie Nuxt SEO (Schema.org)
+useSchemaOrg([
+  defineWebSite({
+    name: 'Mięciutkie szydełkowanie by Becia'
+  }),
+  defineWebPage(),
+  defineLocalBusiness({
+    name: 'Mięciutkie szydełkowanie by Becia',
+    description: 'Ręcznie robione szydełkowe pluszaki i maskotki, lalki amigurumi. Szydełkowanie z miłością.',
+    address: {
+      addressLocality: 'Zgierz',
+      addressRegion: 'Łódzkie',
+      addressCountry: 'PL'
+    },
+    image: 'https://i.postimg.cc/MHxft4y4/becia.jpg'
+  })
+])
 </script>
 
 <template>
