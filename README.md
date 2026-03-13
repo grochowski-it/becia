@@ -73,3 +73,17 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Konfiguracja wysyłki e-maili (Vercel)
+
+Aby formularz kontaktowy poprawnie wysyłał wiadomości na produkcyjny adres e-mail (np. `becia.szydelkuje@gmail.com`), musisz skonfigurować zmienne środowiskowe w panelu Vercel (sekcja **Settings > Environment Variables**).
+
+Dodaj poniższe zmienne:
+
+* `SMTP_HOST`: Adres serwera SMTP (dla Gmaila to `smtp.gmail.com`).
+* `SMTP_PORT`: Port serwera SMTP (np. `465` dla SSL lub `587` dla TLS).
+* `SMTP_USER`: Adres e-mail konta wysyłkowego.
+* `SMTP_PASS`: Hasło do konta SMTP.
+  * **Ważne (Gmail)**: Jeśli na koncie e-mail masz włączoną weryfikację dwuetapową (2FA), musisz wygenerować tzw. "Hasło do aplikacji" (App Password) w ustawieniach bezpieczeństwa konta Google i wkleić je tutaj zamiast standardowego hasła.
+* `SMTP_FROM`: (Opcjonalnie) Adres nadawcy.
+* `SMTP_TO`: Odbiorca wiadomości e-mail (adres, pod który chcesz otrzymywać wiadomości, np. `becia.szydelkuje@gmail.com`).
