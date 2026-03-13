@@ -7,6 +7,8 @@ description: Mięciutkie szydełkowanie - ręcznie robione z miłością. Plusza
 ---
 alt: Pani Beata Witczak
 image: https://i.postimg.cc/MHxft4y4/becia.jpg
+imagePositionX: 50%
+imagePositionY: 50%
 linkText: Zobacz moje prace
 subtitle: ~by @Becia
 text: Odkryj świat ręcznie robionych, przytulnych maskotek. Każdy splot to

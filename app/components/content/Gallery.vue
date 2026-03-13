@@ -31,7 +31,7 @@ const images = computed(() => galleryData.value?.images || [])
               :src="image.src"
               :alt="image.alt"
               class="absolute inset-0 w-full h-full object-cover"
-              :class="image.objectPosition || 'object-center'"
+              :style="{ objectPosition: `${image.imagePositionX || '50%'} ${image.imagePositionY || '50%'}` }"
               loading="lazy"
             />
           </div>

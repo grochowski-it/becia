@@ -6,6 +6,8 @@ defineProps<{
   alt: string
   text?: string
   linkText?: string
+  imagePositionX?: string
+  imagePositionY?: string
 }>()
 </script>
 
@@ -18,6 +20,7 @@ defineProps<{
           <NuxtImg
             :src="image"
             class="w-full h-full object-cover md:absolute md:inset-0"
+            :style="{ objectPosition: `${imagePositionX || '50%'} ${imagePositionY || '50%'}` }"
             :alt="alt"
             loading="lazy"
           />

@@ -26,7 +26,7 @@ const { data: latestPost } = await useAsyncData('latest_blog_post', () =>
           :src="latestPost.image"
           :alt="latestPost.alt || latestPost.title"
           class="w-full h-64 md:h-full object-cover transition-transform hover:scale-105 duration-500"
-          :class="latestPost.objectPosition || 'object-center'"
+          :style="{ objectPosition: `${latestPost.imagePositionX || '50%'} ${latestPost.imagePositionY || '50%'}` }"
           loading="lazy"
         />
       </NuxtLink>
