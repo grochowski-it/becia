@@ -3,11 +3,20 @@ images:
     alt: Handmade crochet light brown teddy bear
     title: Miś Przytulanka
     description: Ręcznie robione z miłością
+    objectPosition: object-center
   - src: https://lh3.googleusercontent.com/aida-public/AB6AXuAukU2TYy4zk8569P5g4B_0aVO8ZrokQtVCs06WLcGAUOtlx0HGHVkPYYrgzuhkikouJVjonGfF0Mpw9jB51m6u_CrlIAND_mgXp-NcLi_yeEfVYF2i5C40pqQXtncLZHfkBbyTlAlIl8UJUoDmm95c-bF78j5Sl5oTL1uCFMZC0OaVrSsozXes9kPVw7wFkJFmhygu4QlqK_dojmlZhic9GQ6tEZCMoAyO4OVcDFWEV93k-G7lxS7u6P55Nk6xHS_oI6RjSu1ILUM
     alt: Colorful crochet flowers in a small pot
     title: Szydełkowe Kwiaty
     description: Prezent, który nie więdnie
+    objectPosition: object-center
   - src: https://lh3.googleusercontent.com/aida-public/AB6AXuCcX-sExvAK0n1oTo4qhpOSdSeqyQqWaUIxCjufNXG31G7pMOVduJ1U-unbF71oFZnGxlRNKp21zmpRxVzqXv-g7YyJKCWdpReAVEcFj6LPRDwxFeXQ_zYPsgTP-k3DQ4cI8dLL6FZ_Xdv0jJcczrSnEPJ-lD9Bfi9ojJngX_63l6m4R8N1wJ0hAnEkX6bc_uj8RW-mFfhDxGnXyzXKyvE1uNgM3zqtgFrBPu5-nvmIC-ZwVGkiED0WPRi2NIlvpReggs_MMvIpx2U
     alt: Cute amigurumi doll with pink dress
     title: Lalka Amigurumi
     description: Dla Twojej pociechy
+    objectPosition: object-top
+  - src: /tiger.png
+    alt: Szydełkowy pluszowy tygrysek
+    title: Pluszowy Tygrysek
+    description: Przytulny, ręcznie robiony tygrysek
+    blogLink: /blog/jak-powstawal-tygrysek
+    objectPosition: object-top

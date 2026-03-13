@@ -37,6 +37,9 @@ textOnlineDesc: Aktualnie przyjmuję nowe zamówienia na wymarzone maskotki.
 
 :gallery{icon="auto_awesome" title="Moje Szydełkowe Dzieła"}
 
+::latest-blog
+::
+
 ::contact
 ---
 :button-text: ZAPISZ MNIE NA LISTĘ

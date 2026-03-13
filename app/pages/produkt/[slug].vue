@@ -147,6 +147,7 @@ const orderSimilar = () => {
               :src="product.src"
               :alt="product.alt"
               class="absolute inset-0 w-full h-full object-cover"
+              :class="product.objectPosition || 'object-center'"
               loading="lazy"
             />
           </div>
@@ -159,6 +160,13 @@ const orderSimilar = () => {
               <div class="prose prose-slate dark:prose-invert">
                 <p class="text-lg text-slate-700 dark:text-slate-300">{{ product.description }}</p>
                 <p class="text-sm text-slate-500 dark:text-slate-400 mt-4">{{ product.alt }}</p>
+              </div>
+
+              <div v-if="product.blogLink" class="mt-8">
+                <NuxtLink :to="product.blogLink" class="inline-flex items-center gap-2 px-6 py-3 bg-leather text-white rounded-xl font-bold hover:bg-leather/90 transition-colors shadow-md">
+                  <span class="material-symbols-outlined">article</span>
+                  Przeczytaj wpis na blogu
+                </NuxtLink>
               </div>
             </div>
 
