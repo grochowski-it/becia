@@ -79,10 +79,10 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     smtp: {
-      smtpHost: process.env.SMTP_HOST || '',
-      smtpPort: process.env.SMTP_PORT || '',
       smtpUser: process.env.SMTP_USER || '',
-      smtpPass: process.env.SMTP_PASS || '',
+      smtpClientId: process.env.SMTP_OAUTH_CLIENT_ID || '',
+      smtpClientSecret: process.env.SMTP_OAUTH_CLIENT_SECRET || '',
+      smtpRefreshToken: process.env.SMTP_OAUTH_REFRESH_TOKEN || '',
       smtpFrom: process.env.SMTP_FROM || '',
       smtpTo: process.env.SMTP_TO || ''
     },

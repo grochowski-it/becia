@@ -12,22 +12,23 @@ export default defineEventHandler(async (event) => {
 
   // Odczyt ustawień SMTP ze środowiska
   const config = useRuntimeConfig()
-  const { smtpHost, smtpPort, smtpUser, smtpPass, smtpFrom, smtpTo } = config.smtp || {}
+  const { smtpUser, smtpClientId, smtpClientSecret, smtpRefreshToken, smtpFrom, smtpTo } = config.smtp || {}
 
-  if (!smtpHost || !smtpUser || !smtpPass) {
-    console.warn('Brak pełnej konfiguracji SMTP. Wiadomość zostanie zapisana tylko w logach.')
+  if (!smtpUser || !smtpClientId || !smtpClientSecret || !smtpRefreshToken) {
+    console.warn('Brak pełnej konfiguracji OAuth2 dla SMTP. Wiadomość zostanie zapisana tylko w logach.')
     console.log('Nowa wiadomość z formularza:', body)
     return { success: true, message: 'Dziękuję za wiadomość! (Mock - tryb bez SMTP)' }
   }
 
   try {
     const transporter = nodemailer.createTransport({
-      host: smtpHost,
-      port: Number(smtpPort) || 587,
-      secure: Number(smtpPort) === 465,
+      service: 'gmail',
       auth: {
+        type: 'OAuth2',
         user: smtpUser,
-        pass: smtpPass
+        clientId: smtpClientId,
+        clientSecret: smtpClientSecret,
+        refreshToken: smtpRefreshToken
       }
     })
 
