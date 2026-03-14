@@ -27,6 +27,7 @@ const form = ref({
 const pending = ref(false)
 const successMsg = ref('')
 const errorMsg = ref('')
+const turnstileRef = ref()
 
 const orderStore = useOrderStore()
 
@@ -69,6 +70,11 @@ const submitForm = async () => {
     errorMsg.value = error.data?.statusMessage || 'Wystąpił błąd. Spróbuj ponownie później.'
   } finally {
     pending.value = false
+    // Zawsze resetujemy turnstile po zakończeniu (sukces lub błąd) by token nie wygasł/nie został użyty ponownie
+    if (turnstileRef.value) {
+      turnstileRef.value.reset()
+      form.value.turnstileToken = ''
+    }
   }
 }
 </script>
@@ -108,7 +114,7 @@ const submitForm = async () => {
 
         <!-- Cloudflare Turnstile -->
         <div class="flex justify-center my-4">
-          <NuxtTurnstile v-model="form.turnstileToken" />
+          <NuxtTurnstile ref="turnstileRef" v-model="form.turnstileToken" />
         </div>
 
         <!-- Messages -->
