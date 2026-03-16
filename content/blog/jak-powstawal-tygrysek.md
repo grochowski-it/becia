@@ -10,6 +10,6 @@ imagePositionY: 30%
 
 # Jak powstawała maskotka tygryska
 
-[]Cześć to mój pierwszy wpis na blogu
+[]Cześć to mój pierwszy wpis na blogu.
 
 Te i inne maskotki możecie zobaczyć w internecie dzięki <https://grochowski.it>.
