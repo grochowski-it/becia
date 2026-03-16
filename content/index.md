@@ -52,6 +52,7 @@ textOnlineDesc: Aktualnie przyjmuję nowe zamówienia na wymarzone maskotki.
 :message-placeholder: Opisz swoją wymarzoną maskotkę, ubranie i inne...
 :name-label: Twoje Imię
 :name-placeholder: Ania Kowalska
+topicLabel: Rodzaj wiadomości
 badge: HANDMADE
 icon: edit_note
 text: Zostaw wiadomość, aby zarezerwować termin na swoje wymarzone dzieło.

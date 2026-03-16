@@ -3,10 +3,10 @@ import nodemailer from 'nodemailer'
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
 
-  if (!body.name || !body.email || !body.message) {
+  if (!body.name || !body.email || !body.message || !body.topic) {
     throw createError({
       statusCode: 400,
-      statusMessage: 'Wszystkie pola (Imię, Email, Wiadomość) są wymagane.'
+      statusMessage: 'Wszystkie pola (Imię, Email, Rodzaj wiadomości, Wiadomość) są wymagane.'
     })
   }
 
@@ -51,12 +51,12 @@ export default defineEventHandler(async (event) => {
     const mailOptions = {
       from: smtpFrom || smtpUser,
       to: smtpTo || smtpUser,
-      subject: `Nowa wiadomość od ${body.name} z Twojego Landing Page`,
-      text: `Imię: ${body.name}\nEmail: ${body.email}\nTreść:\n${body.message}`,
+      subject: `${body.topic} od ${body.name}`,
+      text: `Temat: ${body.topic}\nImię: ${body.name}\nEmail: ${body.email}\nTreść:\n${body.message}`,
       html: `
-        <h3>Nowa wiadomość od ${body.name}</h3>
+        <h3>${body.topic} od ${body.name}</h3>
         <p><strong>Email:</strong> ${body.email}</p>
-        <p><strong>Treść zamówienia:</strong></p>
+        <p><strong>Treść wiadomości:</strong></p>
         <p>${body.message.replace(/\n/g, '<br>')}</p>
       `
     }

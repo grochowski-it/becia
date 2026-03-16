@@ -82,6 +82,7 @@ const orderSimilar = () => {
   isClosing.value = true
   setTimeout(() => {
     orderStore.setOrderMessage(message)
+    orderStore.setOrderTopic('Zamówienie')
     router.push('/#contact')
   }, 300)
 }
