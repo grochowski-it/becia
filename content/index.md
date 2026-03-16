@@ -28,7 +28,7 @@ title: PASJA DO RĘKODZIEŁA
 
 ::status
 ---
-isOnline: "false"
+isOnline: "true"
 link: Skontaktuj się
 textOffline: Becia teraz odpoczywa (Offline)
 textOfflineDesc: Wracam niebawem z nową energią do szydełkowania.
@@ -39,8 +39,7 @@ textOnlineDesc: Aktualnie przyjmuję nowe zamówienia na wymarzone maskotki.
 
 :gallery{icon="auto_awesome" title="Moje Szydełkowe Dzieła"}
 
-::latest-blog
-::
+:latest-blog
 
 ::contact
 ---
@@ -52,10 +51,10 @@ textOnlineDesc: Aktualnie przyjmuję nowe zamówienia na wymarzone maskotki.
 :message-placeholder: Opisz swoją wymarzoną maskotkę, ubranie i inne...
 :name-label: Twoje Imię
 :name-placeholder: Ania Kowalska
-topicLabel: Rodzaj wiadomości
 badge: HANDMADE
 icon: edit_note
 text: Zostaw wiadomość, aby zarezerwować termin na swoje wymarzone dzieło.
 title: Lista oczekujących
+topicLabel: Rodzaj wiadomości
 ---
 ::
