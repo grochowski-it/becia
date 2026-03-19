@@ -164,9 +164,9 @@ const orderSimilar = () => {
               </div>
 
               <div v-if="product.blogLink" class="mt-8">
-                <NuxtLink :to="product.blogLink" class="inline-flex items-center gap-2 px-6 py-3 bg-leather text-white rounded-xl font-bold hover:bg-leather/90 transition-colors shadow-md">
+                <NuxtLink :to="product.blogLink" class="inline-flex items-center gap-2 text-leather dark:text-primary font-bold hover:text-leather/80 dark:hover:text-primary/80 transition-colors hover:underline">
                   <span class="material-symbols-outlined">article</span>
-                  Przeczytaj wpis na blogu
+                  Czytaj na blogu
                 </NuxtLink>
               </div>
             </div>
